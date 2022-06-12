@@ -215,10 +215,15 @@
         </div>
         <div class="row justify-content-center mt-3">
           <div class="col-md-8">
-            <form name="portfolio-contact-form">
+            <form
+              id="form"
+              method="POST"
+              action="https://script.google.com/macros/s/AKfycbxTInj7rwUD3SyIyjIiPFsApJ6CMOvGs2_jb5hxtBN8KquyjRJ9vSuXELxvF04V780Xfw/exec"
+            >
               <div class="mb-3">
                 <label for="nama" class="form-label">Nama Lengkap</label>
                 <input
+                  name="Nama"
                   type="text"
                   class="form-control"
                   id="name"
@@ -226,8 +231,9 @@
                 />
               </div>
               <div class="mb-3">
-                <label name="email" for="email" class="form-label">Email</label>
+                <label for="email" class="form-label">Email</label>
                 <input
+                  name="Email"
                   type="email"
                   class="form-control"
                   id="exampleInputEmail1"
@@ -236,7 +242,7 @@
               </div>
               <div class="form-floating mb-3">
                 <textarea
-                  name="pesan"
+                  name="Pesan"
                   class="form-control"
                   placeholder="Tinggalkan pesan disini"
                   id="pesan"
@@ -244,7 +250,9 @@
                 ></textarea>
                 <label for="pesan">Pesan</label>
               </div>
-              <button type="submit" class="btn btn-primary">Kirim</button>
+              <button type="submit" class="btn btn-primary btn-kirim">
+                Kirim
+              </button>
             </form>
           </div>
         </div>
@@ -269,19 +277,5 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
-
-    <!-- Script Contact Form -->
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbxTInj7rwUD3SyIyjIiPFsApJ6CMOvGs2_jb5hxtBN8KquyjRJ9vSuXELxvF04V780Xfw/exec";
-      const form = document.forms["portfolio-contact-form"];
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => console.log("Success!", response))
-          .catch((error) => console.error("Error!", error.message));
-      });
-    </script>
   </body>
 </html>
